@@ -6,7 +6,8 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
-
+import { lazy } from "react";
+const Grossory = lazy(() => import('./components/Grossory'))
 
 
 const AppLayout = () => {
@@ -39,6 +40,10 @@ const appRouter = createBrowserRouter([
   {
     path: "/restaurant/:resId",
     element: <RestaurantMenu />
+  },
+  {
+    path: "/grossory",
+    element: <Grossory />
   }
  ],
    errorElement: <Error />
